@@ -1,0 +1,35 @@
+	$("input[name='q1']").change( function() {
+		if($(this).val() == "Blue") {
+			$("#correctAnswer").show();
+			score = score + 10;	
+		} else {
+			$("#wrongAnswer").show();
+		}
+		console.log(score);
+		$('#ques1, .answers').hide(function() {
+			$('#ques2').show(1500);	 // callback
+		});
+	});
+
+	$("input[name='q2']").change(function() {
+		if($(this).val() == "Pizza") {
+			$('#correctAnswer').show(); // can just edit HTML without understanding it
+			score = score + 10;
+		} else {
+			$('#wrongAnswer').show();
+		}
+		console.log(score);
+		
+		var finalScoreElem = $('.finalanswer');
+		finalScoreElem.html(score); // continually updating element with a variable
+		
+//		$('.finalanswer').html(score); // clumsier
+		$('#final').show();
+
+
+
+
+Let the user know where in the quiz they are at each step (i.e. “Question 3 of 5) (Optional)
+Let the user know their score so far (Optional)
+Let the user know if their previous response was correct (Optional)
+Any useful features you can come up with! (Optional)
